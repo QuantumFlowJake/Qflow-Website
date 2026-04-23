@@ -1,0 +1,56 @@
+# QuantumFlow AI
+
+> QuantumFlow AI builds and runs done-for-you cold email outreach engines inside B2B businesses. We reach 10,000 targeted prospects per month with hyper-personalized outreach, delivering 50–100+ qualified conversations monthly — fully managed, fully integrated, fully done for you.
+
+## What We Do
+
+QuantumFlow AI installs a custom outreach engine inside a client's business that operates 24/7 in the background. The system qualifies prospects using LLMs and AI enrichment, contacts them at scale with hyper-personalized cold emails, gauges interest, and sparks two-way conversations. The client's only job is to respond to interested prospects and close deals.
+
+This is not a lead list service. We build and run the entire system end-to-end — infrastructure, copywriting, prospect filtering, sending, and ongoing management.
+
+## Key Facts
+
+- Reaches 10,000 targeted prospects per month per client
+- 99% targeting accuracy via AI prospect filtering and enrichment
+- Delivers 50–100+ qualified conversations per month
+- Fully done-for-you: zero setup or maintenance required from the client
+- Integrates directly into existing CRM, inbox, and workflows
+- System compounds over time — results improve month over month as prior touchpoints continue converting
+- Clients own their outreach system outright — it can be paused and resumed, not canceled
+
+## Services
+
+### Outreach Engine (Scale Plan)
+- Price: $1,000/month (or $833/month billed annually — 2 months free)
+- First month free with 90-day contract
+- Includes: full campaign build, 10,000 monthly outreach contacts, AI prospect filtering and enrichment, ongoing management, monthly performance report, CRM and inbox integration
+
+### Outreach Engine (Partnership Plan)
+- Price: $250/month + $1,000 one-time setup fee + 10% profit share after client reaches ROI
+- Profit share only activates after the client has made back their investment
+- Same deliverables as Scale Plan
+- Designed for long-term aligned-incentive partnerships
+
+### AI Agent Add-On
+- Price: $500 one-time build and training + $100/month ongoing
+- Trained on the exact details of the client's business, offer, pricing, and objections
+- Autonomously reads and responds to inbound replies — indistinguishable from a human
+- Qualifies leads, handles objections, sends follow-ups, books calls directly to calendar
+- Can be programmed for virtually any conversational workflow
+
+## How It Works
+
+1. **Build** — QuantumFlow AI researches the client's ideal customer profile, sets up technical infrastructure, and crafts personalized messaging. Completed in days.
+2. **Launch** — The engine begins reaching 10,000 targeted prospects monthly with AI-personalized outreach.
+3. **Replies** — Interested prospects respond. Warm replies route to the client's inbox.
+4. **Close** — The client responds to people who are already curious. The engine continues running 24/7.
+
+## Who This Is For
+
+B2B businesses where the sale happens through a conversation. Industries served include: agencies, consultants, SaaS companies, coaches, financial services, recruiters, real estate professionals. Operates in the United States, Canada, United Kingdom, and Australia.
+
+## Contact
+
+- Email: Info@quantumflowai.net
+- Website: https://quantumflowai.net
+- Strategy call: available via contact form at https://quantumflowai.net/#contact

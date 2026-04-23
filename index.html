@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>QuantumFlow AI — Cold Email Outreach Engine</title>
+  <meta name="description" content="Done-for-you cold email outreach for B2B businesses. We reach 10,000 targeted prospects/month and deliver 50–100+ qualified conversations — fully done for you." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://quantumflowai.net/" />
+
+  <!-- Open Graph (LinkedIn, Facebook) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://quantumflowai.net/" />
+  <meta property="og:title" content="QuantumFlow AI — Cold Email Outreach Engine" />
+  <meta property="og:description" content="We build a custom outreach engine inside your business that works 24/7 — qualifying prospects, reaching out at scale, and sparking real conversations. All you do is close." />
+  <meta property="og:image" content="https://quantumflowai.net/og-image.png" />
+  <meta property="og:image:width" content="740" />
+  <meta property="og:image:height" content="740" />
+  <meta property="og:site_name" content="QuantumFlow AI" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="QuantumFlow AI — Cold Email Outreach Engine" />
+  <meta name="twitter:description" content="We build a custom outreach engine inside your business that works 24/7 — qualifying prospects, reaching out at scale, and sparking real conversations. All you do is close." />
+  <meta name="twitter:image" content="https://quantumflowai.net/og-image.png" />
+
+  <!-- Geo targeting -->
+  <meta name="geo.region" content="US, CA, GB, AU" />
+
+  <!-- Branding -->
+  <link rel="icon" type="image/png" href="/og-image.png" />
+  <meta name="theme-color" content="#6c63ff" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">Quantum<span>Flow</span> AI</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features" class="nav-close">Features</a></li>
+        <li><a href="#pricing" class="nav-close">Pricing</a></li>
+        <li><a href="#faq-section" class="nav-close">FAQ</a></li>
+        <li><a href="#contact" class="nav-close">Contact</a></li>
+        <li><a href="#contact" class="btn-nav nav-close">Book a Call</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="particles"></canvas>
+    <div class="hero-content">
+      <div class="badge reveal">Outreach Engine</div>
+      <h1 class="reveal">Fill Your Pipeline With Our<br/><span>Outreach Engine On Autopilot</span></h1>
+      <p class="reveal">QuantumFlow AI builds a custom outreach engine inside your business that works behind the scenes 24/7 — quietly qualifying prospects, reaching out at scale, gauging interest, and sparking real conversations so all you have to do is show up and close.</p>
+      <div class="hero-btns reveal">
+        <a href="#contact" class="btn-primary">Book a Strategy Call</a>
+        <a href="#features" class="btn-ghost">See How It Works</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat"><span class="counter" data-target="10000">0</span><span>+</span><p>People Reached / Mo</p></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="counter" data-target="99">0</span><span>%</span><p>Targeting Accuracy</p></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="counter" data-target="100">0</span><span>+</span><p>50–100+ Conversations / Mo</p></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="ai-card" id="liveCard">
+        <div class="ai-card-header">
+          <div class="live-header-left">
+            <span class="live-dot"></span>
+            <span class="ai-card-title">Outreach Engine</span>
+          </div>
+          <div class="live-counter-pill">
+            <span id="liveTotal">0</span> sent today
+          </div>
+        </div>
+        <div class="live-summary">
+          <div class="live-stat">
+            <span class="live-stat-num" id="liveSent">0</span>
+            <span class="live-stat-label">Contacted</span>
+          </div>
+          <div class="live-stat-div"></div>
+          <div class="live-stat">
+            <span class="live-stat-num" id="liveReplies">0</span>
+            <span class="live-stat-label">Replies</span>
+          </div>
+          <div class="live-stat-div"></div>
+          <div class="live-stat">
+            <span class="live-stat-num" id="liveHot">0</span>
+            <span class="live-stat-label">Hot Leads</span>
+          </div>
+        </div>
+        <div class="live-feed" id="liveFeed"></div>
+        <div class="live-footer">
+          <span class="live-dot-sm"></span> Engine running 24/7
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="section-inner">
+      <div class="section-label reveal">The Process</div>
+      <h2 class="reveal">Up and Running in Days,<br/>Not Months</h2>
+      <p class="section-sub reveal">We do the heavy lifting. You just show up when conversations are ready.</p>
+      <div class="steps-grid">
+        <div class="step reveal">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>We Build Your Engine</h3>
+            <p>We research your ideal client profile, set up the full technical infrastructure, and craft messaging that speaks directly to your prospects' pain points — all done in days.</p>
+          </div>
+        </div>
+        <div class="step-connector reveal"></div>
+        <div class="step reveal">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>We Launch &amp; Reach at Scale</h3>
+            <p>Your engine fires up and begins reaching 10,000 hyper-targeted prospects every month. AI enriches every contact and personalizes every message before it sends.</p>
+          </div>
+        </div>
+        <div class="step-connector reveal"></div>
+        <div class="step reveal">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Warm Replies Hit Your Inbox</h3>
+            <p>Interested prospects respond. Our system filters out noise so only people who are genuinely curious land in front of you — no cold calls, no guesswork, no chasing.</p>
+          </div>
+        </div>
+        <div class="step-connector reveal"></div>
+        <div class="step reveal">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>You Show Up &amp; Close</h3>
+            <p>Your only job is to reply to people who already raised their hand. The engine keeps running 24/7 in the background — compounding month after month.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="section-inner">
+      <div class="section-label reveal">How It Works</div>
+      <h2 class="reveal">Your B2B Pipeline, On Autopilot</h2>
+      <p class="section-sub reveal">We handle the entire outreach engine — from building it to running it. You just respond to people who are already interested.</p>
+      <div class="features-grid">
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Fully Done For You</h3>
+          <p>We build, launch, and manage your entire outreach engine from scratch. There's nothing for you to learn, set up, or maintain. Just respond when interested prospects reply.</p>
+          <div class="feature-tag">Zero lift required</div>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3>Hyper-Personalized at Scale</h3>
+          <p>Our AI crafts a unique, relevant message for every single prospect — not a mail-merge template. Each email reads like it was written by hand, because the AI makes it that way.</p>
+          <div class="feature-tag">1-to-1 at 10,000 scale</div>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
+          </div>
+          <h3>AI Prospect Filtering</h3>
+          <p>LLMs filter, score, and enrich every prospect before a single email is sent. Only people who genuinely match your ideal client profile make it into your campaign.</p>
+          <div class="feature-tag">99% targeting accuracy</div>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>10,000 Touchpoints / Month</h3>
+          <p>We reach 10,000 highly targeted prospects every month on your behalf. That's consistent, compounding pipeline volume — without you spending a single hour on prospecting.</p>
+          <div class="feature-tag">50–100+ conversations expected</div>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h3>Conversation-Focused</h3>
+          <p>We're not optimizing for opens or clicks. We're engineering real two-way conversations with decision makers who are genuinely curious about what you offer.</p>
+          <div class="feature-tag">Warm replies only</div>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>Full Business Integration</h3>
+          <p>Your outreach engine is wired directly into your existing inbox, CRM, and workflows — from day one. No disconnected tools, no manual exports, no extra steps.</p>
+          <div class="feature-tag">Plug-and-play setup</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-bar-inner">
+      <div class="stats-bar-item reveal">
+        <span class="stats-bar-num"><span class="counter" data-target="10000">0</span>+</span>
+        <span class="stats-bar-label">Prospects reached per client / month</span>
+      </div>
+      <div class="stats-bar-divider"></div>
+      <div class="stats-bar-item reveal">
+        <span class="stats-bar-num"><span class="counter" data-target="99">0</span>%</span>
+        <span class="stats-bar-label">Targeting accuracy via AI enrichment</span>
+      </div>
+      <div class="stats-bar-divider"></div>
+      <div class="stats-bar-item reveal">
+        <span class="stats-bar-num"><span class="counter" data-target="100">0</span>+</span>
+        <span class="stats-bar-label">Warm conversations per month</span>
+      </div>
+      <div class="stats-bar-divider"></div>
+      <div class="stats-bar-item reveal">
+        <span class="stats-bar-num">24/7</span>
+        <span class="stats-bar-label">Engine running behind the scenes</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="section-inner">
+      <div class="section-label reveal">Simple Pricing</div>
+      <h2 class="reveal">Choose Your Growth Model</h2>
+      <p class="section-sub reveal">Two ways to work with us — both fully done for you, both built to get you conversations with ready-to-buy clients.</p>
+      <div class="pricing-grid">
+
+        <div class="pricing-card featured reveal">
+          <div class="pricing-badge">Most Popular</div>
+          <h3 class="pricing-plan">Scale</h3>
+          <p class="pricing-desc">Best for businesses ready to pour fuel on growth and want a predictable, fully-managed pipeline.</p>
+
+          <!-- Billing Toggle -->
+          <div class="billing-toggle">
+            <button class="toggle-btn active" id="toggleMonthly" onclick="setBilling('monthly')">Monthly</button>
+            <button class="toggle-btn" id="toggleYearly" onclick="setBilling('yearly')">
+              Annual
+              <span class="toggle-save-pill">Save 17%</span>
+            </button>
+          </div>
+
+          <div class="pricing-price-block">
+            <div class="pricing-price" id="scalePrice">$1,000<span class="pricing-period">/ mo</span></div>
+            <div class="pricing-sublabel" id="scaleSublabel">First month free with 90-day contract</div>
+          </div>
+          <ul class="pricing-list">
+            <li><span class="check">✓</span> 10,000 targeted outreach contacts/month</li>
+            <li><span class="check">✓</span> 50–100+ qualified conversations expected monthly</li>
+            <li><span class="check">✓</span> Full campaign build &amp; ongoing management</li>
+            <li><span class="check">✓</span> AI prospect filtering &amp; enrichment</li>
+            <li><span class="check">✓</span> Monthly performance report</li>
+            <li><span class="check">✓</span> CRM &amp; inbox integration</li>
+          </ul>
+          <a href="#contact" class="pricing-cta pricing-cta-primary">Start Your Free Month</a>
+        </div>
+
+        <div class="pricing-card reveal">
+          <h3 class="pricing-plan">Partnership</h3>
+          <p class="pricing-desc">Aligned incentives — we only win big when you win. Perfect if you want skin in the game from us.</p>
+          <div class="pricing-price-block">
+            <div class="pricing-price">$250<span class="pricing-period">/ mo</span></div>
+            <div class="pricing-sublabel">+ $1,000 one-time setup fee &amp; 10% profit share after ROI</div>
+          </div>
+          <ul class="pricing-list">
+            <li><span class="check">✓</span> Everything in Scale</li>
+            <li><span class="check">✓</span> Profit share only kicks in after you hit ROI</li>
+            <li><span class="check">✓</span> Pay performance fees from new revenue only</li>
+            <li><span class="check">✓</span> Long-term growth partner model</li>
+            <li><span class="check">✓</span> Shared incentives — we're invested in your success</li>
+          </ul>
+          <a href="#contact" class="pricing-cta pricing-cta-ghost">Apply for Partnership</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AI AGENT -->
+  <section class="ai-agent-section">
+    <div class="section-inner">
+      <div class="agent-inner">
+        <div class="agent-visual reveal">
+          <div class="agent-orb"></div>
+          <div class="agent-card">
+            <div class="agent-card-header">
+              <div class="agent-status">
+                <span class="agent-dot"></span>
+                Agent Active
+              </div>
+              <span class="agent-label-pill">AI Agent</span>
+            </div>
+            <div class="agent-log">
+              <div class="agent-log-line reveal-fast"><span class="log-tag action">QUALIFY</span> Analyzed prospect LinkedIn + website</div>
+              <div class="agent-log-line reveal-fast"><span class="log-tag send">REPLY</span> Sent personalized follow-up</div>
+              <div class="agent-log-line reveal-fast"><span class="log-tag match">MATCH</span> 94% ICP score — flagged as hot lead</div>
+              <div class="agent-log-line reveal-fast"><span class="log-tag action">BOOK</span> Scheduling link sent automatically</div>
+              <div class="agent-log-line reveal-fast typing"><span class="log-tag send">WORKING</span> Processing 47 new replies<span class="ellipsis">...</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="agent-text">
+          <div class="section-label reveal">Level Up</div>
+          <h2 class="reveal">A Sales Rep That Never<br/><span>Sleeps, Quits, or Forgets.</span></h2>
+          <p class="reveal">Our AI Agent is trained on the exact details of your business — your offer, your pricing, your objections, your tone. It handles every reply with the depth and nuance of someone who's been on your team for years. Prospects can't tell the difference. That's the point.</p>
+          <p class="reveal" style="color:var(--text-muted);font-size:0.95rem;margin-top:-8px;margin-bottom:20px;">Once a reply comes in, the agent reads the context, crafts a response that directly references your specific products and services, handles objections in your voice, and moves the conversation toward a booked call — all without you lifting a finger.</p>
+          <ul class="agent-list reveal">
+            <li><span class="check">✓</span> Trained on your exact offer, pricing &amp; talking points</li>
+            <li><span class="check">✓</span> Responds with 99% accuracy to what your business actually does</li>
+            <li><span class="check">✓</span> Indistinguishable from a real human in conversation</li>
+            <li><span class="check">✓</span> Handles objections, answers questions, books calls</li>
+            <li><span class="check">✓</span> Works every lead 24/7 — nothing slips through</li>
+          </ul>
+          <div class="agent-pricing reveal">
+            <div class="agent-price-item">
+              <span class="agent-price-num">$500</span>
+              <span class="agent-price-label">One-time build &amp; training</span>
+            </div>
+            <div class="agent-price-divider"></div>
+            <div class="agent-price-item">
+              <span class="agent-price-num">$100<span style="font-size:1rem;font-weight:500;color:var(--text-muted)">/mo</span></span>
+              <span class="agent-price-label">Ongoing management</span>
+            </div>
+          </div>
+          <a href="#contact" class="btn-primary reveal">Add AI Agent to My Plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq-section">
+    <div class="section-inner">
+      <div class="section-label reveal">FAQ</div>
+      <h2 class="reveal">Common Questions</h2>
+      <p class="section-sub reveal">Everything you need to know before we get started.</p>
+      <div class="faq-grid">
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span>Is this spam?</span>
+            <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>No. Every email is sent one-to-one, personally addressed, and written specifically for that prospect based on real data about their business. There are no mass blasts, no purchased lists, and no generic templates. It looks and reads like a human wrote it — because our AI is trained to write that way.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span>How quickly will I see results?</span>
+            <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Most clients see their first conversations within the first 2–3 weeks. The system takes a few days to build and launch, then results ramp up as the engine warms up. Month 2 and 3 are typically stronger than month 1 as prior touchpoints continue to convert.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span>What do I need to provide?</span>
+            <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Just a clear picture of who your ideal client is and what problem you solve. We handle everything else — research, copywriting, technical setup, sending infrastructure, and ongoing management. A 30-minute onboarding call is all it takes to get us aligned.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span>What industries does this work for?</span>
+            <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Any B2B service or offer where the sale is a conversation — agencies, consultants, SaaS, coaches, financial services, recruiters, real estate professionals, and more. If your ideal client has a LinkedIn profile or a business email, we can reach them.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span>How is this different from hiring a lead gen agency?</span>
+            <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Traditional agencies hand you a list of contacts and walk away. We build a live, running engine inside your business — one that gets smarter over time, integrates with your existing tools, and delivers warm conversations, not raw data. You're not renting our service. You're gaining a system.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span>What happens after someone replies?</span>
+            <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Replies route directly to your inbox so you can take the conversation from there. If you add our AI Agent, it handles the entire follow-up process autonomously — qualifying, nurturing, and booking — so you only step in when someone is ready to buy.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span>What if I want to pause or stop?</span>
+            <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>There's no cancellation — because you own the system. When we build your outreach engine, it's yours. You can pause it, restart it, or resume it whenever you like. If you decide to pause, you'll be charged through the end of your current billing cycle and the engine will go dormant at that point. Whenever you're ready to turn it back on, we're ready. Think of it less like a subscription and more like a piece of infrastructure you own.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner contact-inner">
+      <div class="contact-text">
+        <div class="section-label reveal">Get In Touch</div>
+        <h2 class="reveal">Let's Build Your<br/>Outreach Engine</h2>
+        <p class="reveal">Ready to start getting qualified conversations in your inbox? Book a free strategy call and we'll map out exactly how your outreach engine will work.</p>
+        <ul class="contact-perks reveal">
+          <li><span class="check">✓</span> Free strategy call</li>
+          <li><span class="check">✓</span> Fully done for you</li>
+          <li><span class="check">✓</span> Compounds over time — gets stronger every month</li>
+        </ul>
+      </div>
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            <span class="error-msg" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Work Email</label>
+            <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+            <span class="error-msg" id="emailError"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Acme Corp" required />
+          <span class="error-msg" id="companyError"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your use case..." required></textarea>
+          <span class="error-msg" id="messageError"></span>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-spinner" hidden>
+            <svg aria-hidden="true" class="spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-dasharray="60" stroke-dashoffset="20"/></svg>
+          </span>
+        </button>
+        <div class="form-success" id="formSuccess" hidden>
+          <span>🎉</span> Thanks! We'll be in touch within 24 hours.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#" class="logo">Quantum<span>Flow</span> AI</a>
+      <a href="mailto:Info@Quantumflowai.net" class="footer-email">Info@Quantumflowai.net</a>
+      <p>© 2026 QuantumFlow AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Done-For-You Cold Email Outreach Engine",
+    "alternateName": ["Cold Email Outreach Service", "B2B Lead Generation", "AI Outreach Automation"],
+    "provider": {
+      "@type": "Organization",
+      "name": "QuantumFlow AI",
+      "url": "https://quantumflowai.net",
+      "email": "Info@quantumflowai.net",
+      "logo": "https://quantumflowai.net/og-image.png"
+    },
+    "description": "QuantumFlow AI builds and operates done-for-you cold email outreach engines inside B2B businesses. The system reaches 10,000 targeted prospects per month using AI-powered personalization and enrichment with 99% targeting accuracy, delivering 50–100+ qualified conversations monthly. Fully managed — clients only respond to interested prospects.",
+    "areaServed": [
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "Canada" },
+      { "@type": "Country", "name": "United Kingdom" },
+      { "@type": "Country", "name": "Australia" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "QuantumFlow AI Pricing Plans",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Scale Plan",
+          "price": "1000",
+          "priceCurrency": "USD",
+          "billingIncrement": "P1M",
+          "description": "10,000 targeted outreach contacts per month, 50–100+ qualified conversations expected monthly, full campaign build and ongoing management, AI prospect filtering and enrichment, CRM and inbox integration. First month free with 90-day contract."
+        },
+        {
+          "@type": "Offer",
+          "name": "Partnership Plan",
+          "price": "250",
+          "priceCurrency": "USD",
+          "billingIncrement": "P1M",
+          "description": "Everything in Scale Plan plus 10% profit share after client reaches ROI. $1,000 one-time setup fee. Profit share only activates after client recoups their investment."
+        },
+        {
+          "@type": "Offer",
+          "name": "AI Agent Add-On",
+          "price": "100",
+          "priceCurrency": "USD",
+          "billingIncrement": "P1M",
+          "description": "AI agent trained on the client's exact business, offer, and objections. Autonomously reads and responds to inbound leads, books calls, and handles follow-ups. $500 one-time build fee."
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "QuantumFlow AI",
+    "url": "https://quantumflowai.net",
+    "logo": "https://quantumflowai.net/og-image.png",
+    "email": "Info@quantumflowai.net",
+    "description": "QuantumFlow AI builds done-for-you hyper-personalized cold email outreach engines that deliver 50–100+ qualified conversations per month to businesses in the US, Canada, UK, and Australia.",
+    "areaServed": ["US", "CA", "GB", "AU"],
+    "serviceType": "Cold Email Outreach & AI Lead Generation"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this spam?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Every email is sent one-to-one, personally addressed, and written specifically for that prospect based on real data about their business. There are no mass blasts, no purchased lists, and no generic templates." }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly will I see results?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most clients see their first conversations within the first 2–3 weeks. Month 2 and 3 are typically stronger than month 1 as prior touchpoints continue to convert." }
+      },
+      {
+        "@type": "Question",
+        "name": "What do I need to provide?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Just a clear picture of who your ideal client is and what problem you solve. We handle everything else — research, copywriting, technical setup, sending infrastructure, and ongoing management. A 30-minute onboarding call is all it takes." }
+      },
+      {
+        "@type": "Question",
+        "name": "What industries does this work for?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Any B2B service or offer where the sale is a conversation — agencies, consultants, SaaS, coaches, financial services, recruiters, real estate professionals, and more. If your ideal client has a LinkedIn profile or a business email, we can reach them." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from hiring a lead gen agency?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Traditional agencies hand you a list of contacts and walk away. We build a live, running engine inside your business — one that gets smarter over time and delivers warm conversations, not raw data. You're not renting our service. You're gaining a system." }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens after someone replies?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Replies route directly to your inbox. If you add our AI Agent, it handles the entire follow-up process autonomously — qualifying, nurturing, and booking — so you only step in when someone is ready to buy." }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I want to pause or stop?",
+        "acceptedAnswer": { "@type": "Answer", "text": "There's no cancellation — because you own the system. You can pause it, restart it, or resume it whenever you like. You'll be charged through the end of your current billing cycle and the engine will go dormant at that point. Whenever you're ready to turn it back on, we're ready." }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
