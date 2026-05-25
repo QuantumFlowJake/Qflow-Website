@@ -112,93 +112,99 @@ function setBilling(plan) {
 
 /* ===================== PARTICLE CANVAS ===================== */
 const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
+if (canvas) {
+  const ctx = canvas.getContext('2d');
 
-let particles = [];
-const PARTICLE_COUNT = 80;
+  let particles = [];
+  const PARTICLE_COUNT = 80;
 
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener('resize', resize);
-
-class Particle {
-  constructor() { this.reset(); }
-  reset() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 1.5 + 0.3;
-    this.speedX = (Math.random() - 0.5) * 0.4;
-    this.speedY = (Math.random() - 0.5) * 0.4;
-    this.opacity = Math.random() * 0.5 + 0.1;
-    this.color = Math.random() > 0.5 ? '108,99,255' : '0,212,255';
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   }
-  update() {
-    this.x += this.speedX;
-    this.y += this.speedY;
-    if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
-  }
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${this.color},${this.opacity})`;
-    ctx.fill();
-  }
-}
+  resize();
+  window.addEventListener('resize', resize);
 
-for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+  class Particle {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 1.5 + 0.3;
+      this.speedX = (Math.random() - 0.5) * 0.4;
+      this.speedY = (Math.random() - 0.5) * 0.4;
+      this.opacity = Math.random() * 0.5 + 0.1;
+      this.color = Math.random() > 0.5 ? '108,99,255' : '0,212,255';
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${this.color},${this.opacity})`;
+      ctx.fill();
+    }
+  }
 
-function drawConnections() {
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx = particles[i].x - particles[j].x;
-      const dy = particles[i].y - particles[j].y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 120) {
-        ctx.beginPath();
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = `rgba(108,99,255,${0.12 * (1 - dist / 120)})`;
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
+  for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+
+  function drawConnections() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(108,99,255,${0.12 * (1 - dist / 120)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
       }
     }
   }
-}
 
-function animateParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => { p.update(); p.draw(); });
-  drawConnections();
-  requestAnimationFrame(animateParticles);
+  function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => { p.update(); p.draw(); });
+    drawConnections();
+    requestAnimationFrame(animateParticles);
+  }
+  animateParticles();
 }
-animateParticles();
 
 /* ===================== HAMBURGER MENU ===================== */
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  navLinks.classList.toggle('open');
-  document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
-});
-
-document.querySelectorAll('.nav-close').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navLinks.classList.remove('open');
-    document.body.style.overflow = '';
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
   });
-});
+
+  document.querySelectorAll('.nav-close').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
 
 /* ===================== NAV SCROLL ===================== */
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+}
 
 /* ===================== SCROLL REVEAL ===================== */
 const revealEls = document.querySelectorAll('.reveal');
@@ -262,78 +268,165 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 
 /* ===================== CONTACT FORM ===================== */
 const form = document.getElementById('contactForm');
-const submitBtn = document.getElementById('submitBtn');
-const btnText = submitBtn.querySelector('.btn-text');
-const btnSpinner = submitBtn.querySelector('.btn-spinner');
-const formSuccess = document.getElementById('formSuccess');
+if (form) {
+  const submitBtn = document.getElementById('submitBtn');
+  const btnText = submitBtn.querySelector('.btn-text');
+  const btnSpinner = submitBtn.querySelector('.btn-spinner');
+  const formSuccess = document.getElementById('formSuccess');
 
-function validate() {
-  let valid = true;
+  function validate() {
+    let valid = true;
 
-  const fields = [
-    { id: 'name',    errorId: 'nameError',    msg: 'Please enter your name.',          check: v => v.trim().length >= 2 },
-    { id: 'email',   errorId: 'emailError',   msg: 'Please enter a valid email.',      check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
-    { id: 'company', errorId: 'companyError', msg: 'Please enter your company name.',  check: v => v.trim().length >= 1 },
-    { id: 'message', errorId: 'messageError', msg: 'Please tell us how we can help.',  check: v => v.trim().length >= 10 },
-  ];
+    const fields = [
+      { id: 'name',    errorId: 'nameError',    msg: 'Please enter your name.',          check: v => v.trim().length >= 2 },
+      { id: 'email',   errorId: 'emailError',   msg: 'Please enter a valid email.',      check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+      { id: 'company', errorId: 'companyError', msg: 'Please enter your company name.',  check: v => v.trim().length >= 1 },
+      { id: 'message', errorId: 'messageError', msg: 'Please tell us how we can help.',  check: v => v.trim().length >= 10 },
+    ];
 
-  fields.forEach(({ id, errorId, msg, check }) => {
-    const input = document.getElementById(id);
-    const error = document.getElementById(errorId);
-    if (!check(input.value)) {
-      input.classList.add('error');
-      error.textContent = msg;
-      valid = false;
-    } else {
-      input.classList.remove('error');
-      error.textContent = '';
-    }
-  });
-
-  return valid;
-}
-
-// Clear error on input
-['name','email','company','message'].forEach(id => {
-  document.getElementById(id).addEventListener('input', () => {
-    document.getElementById(id).classList.remove('error');
-    document.getElementById(id + 'Error').textContent = '';
-  });
-});
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  if (!validate()) return;
-
-  submitBtn.disabled = true;
-  btnText.hidden = true;
-  btnSpinner.hidden = false;
-
-  try {
-    const res = await fetch('https://formsubmit.co/ajax/Jake@quantumflowai.net', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        name:     document.getElementById('name').value,
-        email:    document.getElementById('email').value,
-        company:  document.getElementById('company').value,
-        message:  document.getElementById('message').value,
-        _cc:      'Brandon@quantumflowai.net,Info@quantumflowai.net',
-        _subject: 'New enquiry from QuantumFlow AI website',
-        _captcha: 'false',
-      })
+    fields.forEach(({ id, errorId, msg, check }) => {
+      const input = document.getElementById(id);
+      const error = document.getElementById(errorId);
+      if (!check(input.value)) {
+        input.classList.add('error');
+        error.textContent = msg;
+        valid = false;
+      } else {
+        input.classList.remove('error');
+        error.textContent = '';
+      }
     });
 
-    if (!res.ok) throw new Error('Network error');
-
-    form.reset();
-    formSuccess.hidden = false;
-    setTimeout(() => { formSuccess.hidden = true; }, 6000);
-  } catch {
-    alert('Something went wrong. Please email us directly at Info@quantumflowai.net');
+    return valid;
   }
 
-  submitBtn.disabled = false;
-  btnText.hidden = false;
-  btnSpinner.hidden = true;
-});
+  // Clear error on input
+  ['name','email','company','message'].forEach(id => {
+    document.getElementById(id).addEventListener('input', () => {
+      document.getElementById(id).classList.remove('error');
+      document.getElementById(id + 'Error').textContent = '';
+    });
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    submitBtn.disabled = true;
+    btnText.hidden = true;
+    btnSpinner.hidden = false;
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/Jake@quantumflowai.net', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name:     document.getElementById('name').value,
+          email:    document.getElementById('email').value,
+          company:  document.getElementById('company').value,
+          message:  document.getElementById('message').value,
+          _cc:      'Brandon@quantumflowai.net,Info@quantumflowai.net',
+          _subject: 'New enquiry from QuantumFlow AI website',
+          _captcha: 'false',
+        })
+      });
+
+      if (!res.ok) throw new Error('Network error');
+
+      form.reset();
+      formSuccess.hidden = false;
+      setTimeout(() => { formSuccess.hidden = true; }, 6000);
+    } catch {
+      alert('Something went wrong. Please email us directly at Info@quantumflowai.net');
+    }
+
+    submitBtn.disabled = false;
+    btnText.hidden = false;
+    btnSpinner.hidden = true;
+  });
+}
+
+/* ===================== PARTNER FORM ===================== */
+const partnerForm = document.getElementById('partnerForm');
+if (partnerForm) {
+  const partnerSubmitBtn = document.getElementById('partnerSubmitBtn');
+  const partnerBtnText = partnerSubmitBtn.querySelector('.btn-text');
+  const partnerBtnSpinner = partnerSubmitBtn.querySelector('.btn-spinner');
+  const partnerFormSuccess = document.getElementById('partnerFormSuccess');
+
+  function validatePartner() {
+    let valid = true;
+
+    const fields = [
+      { id: 'partnerName',     errorId: 'partnerNameError',     msg: 'Please enter your name.',                  check: v => v.trim().length >= 2 },
+      { id: 'partnerEmail',    errorId: 'partnerEmailError',    msg: 'Please enter a valid email.',              check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+      { id: 'partnerCompany',  errorId: 'partnerCompanyError',  msg: 'Please enter your company or website.',    check: v => v.trim().length >= 1 },
+      { id: 'partnerType',     errorId: 'partnerTypeError',     msg: 'Please choose a partnership type.',        check: v => v.trim().length >= 1 },
+      { id: 'partnerAudience', errorId: 'partnerAudienceError', msg: 'Tell us a little about your audience.',    check: v => v.trim().length >= 10 },
+      { id: 'partnerPitch',    errorId: 'partnerPitchError',    msg: 'Tell us why we should partner.',           check: v => v.trim().length >= 10 },
+    ];
+
+    fields.forEach(({ id, errorId, msg, check }) => {
+      const input = document.getElementById(id);
+      const error = document.getElementById(errorId);
+      if (!check(input.value)) {
+        input.classList.add('error');
+        error.textContent = msg;
+        valid = false;
+      } else {
+        input.classList.remove('error');
+        error.textContent = '';
+      }
+    });
+
+    return valid;
+  }
+
+  ['partnerName','partnerEmail','partnerCompany','partnerType','partnerAudience','partnerPitch'].forEach(id => {
+    const el = document.getElementById(id);
+    const evt = el.tagName === 'SELECT' ? 'change' : 'input';
+    el.addEventListener(evt, () => {
+      el.classList.remove('error');
+      document.getElementById(id + 'Error').textContent = '';
+    });
+  });
+
+  partnerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validatePartner()) return;
+
+    partnerSubmitBtn.disabled = true;
+    partnerBtnText.hidden = true;
+    partnerBtnSpinner.hidden = false;
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/Jake@quantumflowai.net', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name:              document.getElementById('partnerName').value,
+          email:             document.getElementById('partnerEmail').value,
+          company_or_site:   document.getElementById('partnerCompany').value,
+          partnership_type:  document.getElementById('partnerType').value,
+          audience:          document.getElementById('partnerAudience').value,
+          pitch:             document.getElementById('partnerPitch').value,
+          _cc:               'Brandon@quantumflowai.net,Info@quantumflowai.net',
+          _subject:          'New partner / affiliate application from QuantumFlow website',
+          _captcha:          'false',
+        })
+      });
+
+      if (!res.ok) throw new Error('Network error');
+
+      partnerForm.reset();
+      partnerFormSuccess.hidden = false;
+      setTimeout(() => { partnerFormSuccess.hidden = true; }, 6000);
+    } catch {
+      alert('Something went wrong. Please email us directly at Info@quantumflowai.net');
+    }
+
+    partnerSubmitBtn.disabled = false;
+    partnerBtnText.hidden = false;
+    partnerBtnSpinner.hidden = true;
+  });
+}
