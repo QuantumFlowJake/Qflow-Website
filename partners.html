@@ -44,7 +44,7 @@
     .partners-hero .hero-btns { justify-content: center; }
     .partners-hero .badge { margin-left: auto; margin-right: auto; }
 
-    /* Logo placeholder — drop in <img> later */
+    /* Logo placeholder — single letter on gradient tile */
     .partner-logo {
       width: 56px;
       height: 56px;
@@ -59,6 +59,54 @@
       background: linear-gradient(135deg, rgba(108, 99, 255, 0.25), rgba(0, 212, 255, 0.18));
       border: 1px solid rgba(108, 99, 255, 0.35);
     }
+    /* Image-based logo — partner's own asset on a clean light tile */
+    .partner-logo-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      padding: 8px;
+      margin-bottom: 18px;
+      background: #fff;
+      border: 1px solid var(--card-border);
+      object-fit: contain;
+      display: block;
+    }
+    /* Brand-text logo — for partners whose visual identity is typography (e.g. 401kHunter) */
+    .partner-logo-text {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid var(--card-border);
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: -0.5px;
+      color: #2563eb;
+      text-decoration: none;
+    }
+    /* Wrapper link around partner logos — no underline, behaves as a tile */
+    .partner-logo-link {
+      display: inline-block;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .partner-logo-link:hover { transform: translateY(-2px); }
+
+    /* Soft helper text under the partner grid */
+    .partners-footnote {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 32px;
+    }
+    .partners-footnote a {
+      color: var(--accent2);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 212, 255, 0.35);
+      transition: border-color 0.2s;
+    }
+    .partners-footnote a:hover { border-color: var(--accent2); }
 
     /* Active nav item subtle indicator */
     .nav-links a[aria-current="page"] { color: var(--text); }
@@ -135,48 +183,28 @@
       <div class="features-grid">
 
         <div class="feature-card reveal">
-          <div class="partner-logo">A</div>
-          <h3>Apex Media Group</h3>
-          <p>Co-marketing partner running joint outreach campaigns for B2B SaaS clients. Combined pipeline contribution: 200+ qualified conversations per quarter.</p>
-          <div class="feature-tag">Co-Marketing</div>
-        </div>
-
-        <div class="feature-card reveal">
-          <div class="partner-logo">N</div>
-          <h3>NorthStar Labs</h3>
-          <p>Technical integration partner — their CRM enrichment data feeds directly into our targeting layer, lifting reply rates by ~18% on shared accounts.</p>
+          <a href="https://connectiko.io/" target="_blank" rel="noopener noreferrer" class="partner-logo-link" aria-label="Visit Connectiko">
+            <img src="partners/connectiko.ico" alt="Connectiko logo" class="partner-logo-img" width="56" height="56" />
+          </a>
+          <h3>ConnectiKo</h3>
+          <p>Free digital business card platform and QR wallet — lets individuals, creators, and businesses build digital profiles, share contact info via QR codes, and broadcast updates and offers to their followers.</p>
           <div class="feature-tag">Integration Partner</div>
         </div>
 
         <div class="feature-card reveal">
-          <div class="partner-logo">V</div>
-          <h3>Vantage Group</h3>
-          <p>Reseller partner serving mid-market consulting firms. White-glove onboarding plus our engine, delivered end-to-end under one roof.</p>
-          <div class="feature-tag">Reseller</div>
-        </div>
-
-        <div class="feature-card reveal">
-          <div class="partner-logo">C</div>
-          <h3>Crestline Co.</h3>
-          <p>Agency partner referring high-fit B2B clients into the QuantumFlow program. Long-term revenue share on every account they bring through.</p>
-          <div class="feature-tag">Agency Partner</div>
-        </div>
-
-        <div class="feature-card reveal">
-          <div class="partner-logo">O</div>
-          <h3>Orion Ventures</h3>
-          <p>Portfolio partner — QuantumFlow is the preferred outreach engine across their portfolio of B2B startups, with shared playbooks and pricing.</p>
-          <div class="feature-tag">Portfolio Partner</div>
-        </div>
-
-        <div class="feature-card reveal">
-          <div class="partner-logo">S</div>
-          <h3>Summit Digital</h3>
-          <p>Affiliate partner running performance-driven referral campaigns. Top tier on the leaderboard for three quarters running.</p>
-          <div class="feature-tag">Top Affiliate</div>
+          <a href="https://www.401khunter.com/" target="_blank" rel="noopener noreferrer" class="partner-logo-link" aria-label="Visit 401kHunter">
+            <span class="partner-logo-text">401kHunter</span>
+          </a>
+          <h3>401kHunter</h3>
+          <p>Helps financial advisors find and prospect 401(k) takeover opportunities by mining public Form 5500 filings — surfacing overpriced plans, scoring them by fee tier, and handing advisors the decision-maker contact info to pitch.</p>
+          <div class="feature-tag">Strategic Partner</div>
         </div>
 
       </div>
+
+      <p class="partners-footnote reveal">
+        More partners joining soon. Want your company here? <a href="#partners-apply">Apply to partner with us</a>.
+      </p>
     </div>
   </section>
 
