@@ -1,6 +1,14 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/about", "destination": "/", "permanent": true },
+    { "source": "/contact", "destination": "/#contact", "permanent": true },
+    { "source": "/cart", "destination": "/", "permanent": true },
+    { "source": "/digital-products-2-1", "destination": "/", "permanent": true },
+    { "source": "/member-site-homepage-1", "destination": "/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
