@@ -98,12 +98,12 @@ function setBilling(plan) {
   const btnYearly = document.getElementById('toggleYearly');
 
   if (plan === 'yearly') {
-    price.innerHTML = '$833<span class="pricing-period">/ mo</span>';
-    sublabel.textContent = 'Billed $10,000/year — 2 months free';
+    price.innerHTML = '$667<span class="pricing-period">/ mo</span>';
+    sublabel.textContent = 'Billed $8,000/year — 2 months free';
     btnYearly.classList.add('active');
     btnMonthly.classList.remove('active');
   } else {
-    price.innerHTML = '$1,000<span class="pricing-period">/ mo</span>';
+    price.innerHTML = '$800<span class="pricing-period">/ mo</span>';
     sublabel.textContent = 'First month free with 90-day contract';
     btnMonthly.classList.add('active');
     btnYearly.classList.remove('active');
@@ -297,11 +297,30 @@ if (form) {
       }
     });
 
+    // If the user opts in to SMS, a valid mobile number is required.
+    const phoneInput = document.getElementById('phone');
+    const phoneError = document.getElementById('phoneError');
+    const smsConsent = document.getElementById('smsConsent');
+    if (smsConsent && smsConsent.checked) {
+      const digits = phoneInput.value.replace(/\D/g, '');
+      if (digits.length < 10) {
+        phoneInput.classList.add('error');
+        phoneError.textContent = 'Enter a valid mobile number to receive texts, or uncheck SMS consent.';
+        valid = false;
+      } else {
+        phoneInput.classList.remove('error');
+        phoneError.textContent = '';
+      }
+    } else {
+      phoneInput.classList.remove('error');
+      phoneError.textContent = '';
+    }
+
     return valid;
   }
 
   // Clear error on input
-  ['name','email','company','message'].forEach(id => {
+  ['name','email','company','phone','message'].forEach(id => {
     document.getElementById(id).addEventListener('input', () => {
       document.getElementById(id).classList.remove('error');
       document.getElementById(id + 'Error').textContent = '';
@@ -321,10 +340,15 @@ if (form) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
-          name:     document.getElementById('name').value,
-          email:    document.getElementById('email').value,
-          company:  document.getElementById('company').value,
-          message:  document.getElementById('message').value,
+          name:        document.getElementById('name').value,
+          email:       document.getElementById('email').value,
+          company:     document.getElementById('company').value,
+          phone:       document.getElementById('phone').value,
+          message:     document.getElementById('message').value,
+          sms_consent: document.getElementById('smsConsent').checked ? 'YES — opted in to SMS' : 'No',
+          consent_language: document.getElementById('smsConsent').checked
+            ? 'By checking this box, I agree to receive text messages from QuantumFlow AI at the mobile number provided, including account, appointment, and follow-up messages. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition of purchase.'
+            : '',
           _cc:      'Brandon@quantumflowai.net,Info@quantumflowai.net',
           _subject: 'New enquiry from QuantumFlow AI website',
           _captcha: 'false',

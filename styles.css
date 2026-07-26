@@ -551,6 +551,61 @@ h2 {
 .form-group textarea.error { border-color: #ef4444; }
 .error-msg { font-size: 0.75rem; color: #ef4444; min-height: 16px; }
 
+.label-optional { font-weight: 400; color: #4a5568; }
+
+/* SMS consent checkbox */
+.form-consent { margin: 4px 0 18px; }
+.consent-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+.consent-check input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.consent-box {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border-radius: 6px;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.04);
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+}
+.consent-check:hover .consent-box { border-color: var(--accent); }
+.consent-check input[type="checkbox"]:focus-visible + .consent-box {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+.consent-check input[type="checkbox"]:checked + .consent-box {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.consent-check input[type="checkbox"]:checked + .consent-box::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.consent-text {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+.consent-text a { color: var(--accent2); text-decoration: none; }
+.consent-text a:hover { text-decoration: underline; }
+
 .btn-submit {
   width: 100%;
   background: linear-gradient(135deg, var(--accent), var(--accent3));
@@ -1138,6 +1193,14 @@ h2 {
   transition: color 0.2s;
 }
 .footer-email:hover { color: var(--accent2); }
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-links a[aria-current="page"] { color: var(--text); }
 
 /* ===================== REVEAL ANIMATIONS ===================== */
 .reveal {
