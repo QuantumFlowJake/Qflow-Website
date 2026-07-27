@@ -454,3 +454,78 @@ if (partnerForm) {
     partnerBtnSpinner.hidden = true;
   });
 }
+
+/* ===================== AI ADS WAITLIST FORM ===================== */
+const aiAdsForm = document.getElementById('aiAdsForm');
+if (aiAdsForm) {
+  const aiAdsSubmitBtn = document.getElementById('aiAdsSubmitBtn');
+  const aiAdsBtnText = aiAdsSubmitBtn.querySelector('.btn-text');
+  const aiAdsBtnSpinner = aiAdsSubmitBtn.querySelector('.btn-spinner');
+  const aiAdsFormSuccess = document.getElementById('aiAdsFormSuccess');
+
+  function validateAiAds() {
+    let valid = true;
+
+    const fields = [
+      { id: 'aiAdsName',  errorId: 'aiAdsNameError',  msg: 'Please enter your name.',     check: v => v.trim().length >= 2 },
+      { id: 'aiAdsEmail', errorId: 'aiAdsEmailError', msg: 'Please enter a valid email.', check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+    ];
+
+    fields.forEach(({ id, errorId, msg, check }) => {
+      const input = document.getElementById(id);
+      const error = document.getElementById(errorId);
+      if (!check(input.value)) {
+        input.classList.add('error');
+        error.textContent = msg;
+        valid = false;
+      } else {
+        input.classList.remove('error');
+        error.textContent = '';
+      }
+    });
+
+    return valid;
+  }
+
+  ['aiAdsName', 'aiAdsEmail'].forEach(id => {
+    document.getElementById(id).addEventListener('input', () => {
+      document.getElementById(id).classList.remove('error');
+      document.getElementById(id + 'Error').textContent = '';
+    });
+  });
+
+  aiAdsForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validateAiAds()) return;
+
+    aiAdsSubmitBtn.disabled = true;
+    aiAdsBtnText.hidden = true;
+    aiAdsBtnSpinner.hidden = false;
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/Jake@quantumflowai.net', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name:     document.getElementById('aiAdsName').value,
+          email:    document.getElementById('aiAdsEmail').value,
+          _cc:      'Brandon@quantumflowai.net,Info@quantumflowai.net',
+          _subject: 'New AI Ads waitlist signup',
+          _captcha: 'false',
+        })
+      });
+
+      if (!res.ok) throw new Error('Network error');
+
+      aiAdsForm.reset();
+      aiAdsFormSuccess.hidden = false;
+      setTimeout(() => { aiAdsFormSuccess.hidden = true; }, 6000);
+    } catch {
+      alert('Something went wrong. Please email us directly at Info@quantumflowai.net');
+    }
+
+    aiAdsSubmitBtn.disabled = false;
+    aiAdsBtnText.hidden = false;
+    aiAdsBtnSpinner.hidden = true;
+  });
+}
